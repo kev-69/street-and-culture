@@ -14,8 +14,8 @@ const Navbar = () => {
         
         <ul className='nav-links'>
           <li><a href='#'>BRANDS</a></li>
-          <li><a href='#'>DENIM WEAR</a></li>
-          <li><a href='#'>STREET WEAR</a></li>
+          <li><a href='#'>DENIM WEARS</a></li>
+          <li><a href='#'>STREET WEARS</a></li>
           <li className='logo'>
             <a href='/'>
               <h1>REVOLVER</h1>
