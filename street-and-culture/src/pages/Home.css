@@ -124,3 +124,118 @@
     top: 65%;
   }
 }
+
+/* Featured Brands Section */
+.featured-brands {
+  padding: 4rem 2rem;
+  background-color: #f8f8f8;
+}
+
+.featured-brands h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Italiana', serif;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.brands-carousel {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.brand-item {
+  padding: 1rem;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.brand-item img {
+  max-width: 120px;
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brand-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Slick Carousel Custom Styles */
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+}
+
+.slick-prev {
+  left: -40px;
+}
+
+.slick-next {
+  right: -40px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 40px;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+  }
+
+  .featured-brands {
+    padding: 3rem 1rem;
+  }
+
+  .featured-brands h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .brands-carousel {
+    padding: 0 1rem;
+  }
+
+  .brand-item {
+    height: 80px;
+  }
+
+  .brand-item img {
+    max-width: 100px;
+    max-height: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .featured-brands h2 {
+    font-size: 1.8rem;
+  }
+
+  .brand-item {
+    height: 70px;
+  }
+
+  .brand-item img {
+    max-width: 80px;
+    max-height: 40px;
+  }
+}
