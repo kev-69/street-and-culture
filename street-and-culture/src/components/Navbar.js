@@ -49,9 +49,9 @@ const Navbar = () => {
           <span></span>
           <span></span>
           <span></span>
-          <a href="#">SEE BLOGS</a>
-          <a href="#">ABOUT US</a>
-          <a href="#">CONTACT US</a>
+          <a href="/blogs">SEE BLOGS</a>
+          <a href="/about">ABOUT US</a>
+          <a href="/contact">CONTACT US</a>
         </div>
       )}
 
@@ -62,11 +62,11 @@ const Navbar = () => {
           <a href="#">STREET WEARS</a>
           <a href="#">DENIM WEARS</a>
         </div>
-        <img src={brandLogo} alt="Logo" className="logo" />
+        <a href="/"><img src={brandLogo} alt="Logo" className="logo" /></a>
         <div className="nav-links">
-          <a href="#">SEE BLOGS</a>
-          <a href="#">ABOUT US</a>
-          <a href="#">CONTACT US</a>
+          <a href="/blogs">SEE BLOGS</a>
+          <a href="/about">ABOUT US</a>
+          <a href="/contact">CONTACT US</a>
         </div>
       </div>
 
