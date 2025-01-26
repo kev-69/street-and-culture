@@ -1,19 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
-import searchIcon from '../assets/icons/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png';
+import searchIcon from '../assets/icons/search-icon.png';
+import cartIcon from '../assets/icons/cart-icon.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className='navbar'>
       <div className='navbar-container'>
-        <button 
-          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} 
+        {/* Mobile Menu Toggle */}
+        <button
+          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -22,19 +38,35 @@ const Navbar = () => {
           <span></span>
         </button>
 
-        <div className='logo'>
-          <a href='/'>
-            <h1>REVOLVER</h1>
+        {/* Desktop Search Icon */}
+        <div className='search-icon-large'>
+          <a href="#">
+            <img src={searchIcon} alt="search icon" />
           </a>
         </div>
 
-        <div className={`nav-content ${isMenuOpen ? 'active' : ''}`}>
+        {/* Main Navigation */}
+        <div ref={menuRef} className={`nav-content ${isMenuOpen ? 'active' : ''}`}>
+          {/* Mobile Search Input */}
+          <div className='search-input-mobile'>
+            <input type='text' placeholder='Search for a product' />
+          </div>
+
+          {/* Left Navigation Links */}
           <ul className='nav-links left-links'>
             <li><a href='#' onClick={toggleMenu}>BRANDS</a></li>
-            <li><a href='#' onClick={toggleMenu}>DENIM WEARS</a></li>
-            <li><a href='#' onClick={toggleMenu}>STREET WEARS</a></li>
+            <li><a href='#' onClick={toggleMenu}>DENIM WEAR</a></li>
+            <li><a href='#' onClick={toggleMenu}>STREET WEAR</a></li>
           </ul>
 
+          {/* Logo */}
+          <div className='logo'>
+            <a href='/'>
+              <h1>REVOLVER</h1>
+            </a>
+          </div>
+
+          {/* Right Navigation Links */}
           <ul className='nav-links right-links'>
             <li><a href='#' onClick={toggleMenu}>SEE BLOGS</a></li>
             <li><a href='#' onClick={toggleMenu}>ABOUT US</a></li>
@@ -42,9 +74,10 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className='search-icon'>
+        {/* Cart Icon */}
+        <div className='cart-icon'>
           <a href="#">
-            <img src={searchIcon} alt="search icon" />
+            <img src={cartIcon} alt="cart icon" />
           </a>
         </div>
       </div>
