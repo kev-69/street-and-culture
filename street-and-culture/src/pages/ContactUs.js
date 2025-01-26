@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import './ContactUs.css';
 
 const ContactUs = () => {
@@ -35,7 +33,6 @@ const ContactUs = () => {
 
   return (
     <div>
-      {/* <Navbar /> */}
       <main className="contact-container">
         <div className="contact-header">
           <h1>Contact Us</h1>
@@ -115,7 +112,6 @@ const ContactUs = () => {
           </form>
         </div>
       </main>
-      {/* <Footer /> */}
     </div>
   );
 };
