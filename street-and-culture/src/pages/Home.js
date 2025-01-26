@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer'
 import './Home.css';
 
 // home page background images
@@ -91,7 +89,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Navbar />
       {/* Banner Section */}
       <div className="banner-container">
         {images.map((img, index) => (
@@ -121,7 +118,6 @@ const Home = () => {
         </div>
       </section>
       {/* Featured Brands Section End */}
-      <Footer />
     </div>
   );
 };
