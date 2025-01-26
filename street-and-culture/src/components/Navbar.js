@@ -1,85 +1,78 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import searchIcon from '../assets/icons/search-icon.png';
-import cartIcon from '../assets/icons/cart-icon.png';
+import { Menu, ShoppingCart, Search } from 'lucide-react';
+import brandLogo from '../assets/images/web-logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsMenuOpen(false);
-    }
+  // Handle closing the menu when clicking outside
+  const handleOutsideClick = (e) => {
+    if (e.target.closest('.mobile-menu') || e.target.closest('.menu-icon')) return;
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    if (isMenuOpen) {
+      document.addEventListener('click', handleOutsideClick);
+    } else {
+      document.removeEventListener('click', handleOutsideClick);
+    }
+
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleOutsideClick);
     };
-  }, []);
+  }, [isMenuOpen]);
 
   return (
-    <nav className='navbar'>
-      <div className='navbar-container'>
-        {/* Mobile Menu Toggle */}
-        <button
-          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    <nav className="navbar" onClick={handleOutsideClick}>
+      {/* Left Section: Search Icon */}
+      <div className="navbar-left">
+        <Search className="icon" />
+      </div>
 
-        {/* Desktop Search Icon */}
-        <div className='search-icon-large'>
-          <a href="#">
-            <img src={searchIcon} alt="search icon" />
-          </a>
-        </div>
-
-        {/* Main Navigation */}
-        <div ref={menuRef} className={`nav-content ${isMenuOpen ? 'active' : ''}`}>
-          {/* Mobile Search Input */}
-          <div className='search-input-mobile'>
-            <input type='text' placeholder='Search for a product' />
+      {/* Mobile Menu */}
+      <Menu
+        className="icon menu-icon"
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+      />
+      {isMenuOpen && (
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          {/* Place a search input here with the search icon with placeholder "Search for products" */}
+          <div className="mobile-search">
+            <input type="text" placeholder="Search for products" />
+            <Search className="icon" />
           </div>
-
-          {/* Left Navigation Links */}
-          <ul className='nav-links left-links'>
-            <li><a href='#' onClick={toggleMenu}>BRANDS</a></li>
-            <li><a href='#' onClick={toggleMenu}>DENIM WEAR</a></li>
-            <li><a href='#' onClick={toggleMenu}>STREET WEAR</a></li>
-          </ul>
-
-          {/* Logo */}
-          <div className='logo'>
-            <a href='/'>
-              <h1>REVOLVER</h1>
-            </a>
-          </div>
-
-          {/* Right Navigation Links */}
-          <ul className='nav-links right-links'>
-            <li><a href='#' onClick={toggleMenu}>SEE BLOGS</a></li>
-            <li><a href='#' onClick={toggleMenu}>ABOUT US</a></li>
-            <li><a href='#' onClick={toggleMenu}>CONTACT US</a></li>
-          </ul>
+          <a href="#">BRANDS</a>
+          <a href="#">DENIM WEAR</a>
+          <a href="#">STREET WEAR</a>
+          <span></span>
+          <span></span>
+          <span></span>
+          <a href="#">SEE BLOGS</a>
+          <a href="#">ABOUT US</a>
+          <a href="#">CONTACT US</a>
         </div>
+      )}
 
-        {/* Cart Icon */}
-        <div className='cart-icon'>
-          <a href="#">
-            <img src={cartIcon} alt="cart icon" />
-          </a>
+      {/* Center Section: Logo & Links (large screens only) */}
+      <div className="navbar-center">
+        <div className="nav-links">
+          <a href="#">BRANDS</a>
+          <a href="#">STREET WEARS</a>
+          <a href="#">DENIM WEARS</a>
         </div>
+        <img src={brandLogo} alt="Logo" className="logo" />
+        <div className="nav-links">
+          <a href="#">SEE BLOGS</a>
+          <a href="#">CONTACT US</a>
+          <a href="#">ABOUT US</a>
+        </div>
+      </div>
+
+      {/* Right Section: Cart Icon */}
+      <div className="navbar-right">
+        <ShoppingCart className="icon" />
       </div>
     </nav>
   );
