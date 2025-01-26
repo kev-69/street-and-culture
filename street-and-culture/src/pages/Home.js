@@ -39,7 +39,7 @@ const Home = () => {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 50,
+    speed: 900,
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
@@ -101,6 +101,7 @@ const Home = () => {
         <p className="banner-description">A platform for street clothing brand owners to sell their products.</p>
       </div>
       {/* Banner Section End */}
+      
       {/* Featured Brands Section */}
       <section className="featured-brands">
         <h2>FEATURED BRANDS</h2>
