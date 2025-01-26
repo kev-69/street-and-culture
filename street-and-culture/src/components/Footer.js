@@ -17,15 +17,7 @@ const Footer = () => {
             <p>📧 Email: beyondthestreet@gmail.com</p>
             <p>📍 Address: Labadi beach road, Labadi</p>
           </div>
-          <div className="social-links">
-            <a href="#" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="#" aria-label="Twitter"><FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a href="#" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
-            <a href="#" aria-label="Chrome"><FontAwesomeIcon icon={faChrome} /></a>
-          </div>
-          <p className="copyright">Beyond The Street {new Date().getFullYear()}</p>
+          
         </div>
 
         <div className="link-column">
@@ -78,6 +70,16 @@ const Footer = () => {
             <li><a href="#">Custom hoodies</a></li>
             <li><a href="#">Custom hoodies</a></li>
           </ul>
+          <div className="social-links">
+            <a href="#" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a href="#" aria-label="Twitter"><FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a href="#" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
+            <a href="#" aria-label="Chrome"><FontAwesomeIcon icon={faChrome} /></a> <br />
+            
+          </div>
+          <p className="copyright">Beyond The Street {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>
