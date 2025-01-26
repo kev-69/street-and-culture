@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'
 import './Home.css';
+
+// home page background images
 import homeBg1 from '../assets/images/home-bg1.jpg';
 import homeBg2 from '../assets/images/home-bg2.jpg';
+import homeBg3 from '../assets/images/home-bg3.jpg';
+
+// import slick carousel
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -26,7 +31,7 @@ import ogioLogo from '../assets/brands/sdf.png';
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [homeBg1, homeBg2];
+  const images = [homeBg1, homeBg2, homeBg3];
 
   useEffect(() => {
     const interval = setInterval(() => {
