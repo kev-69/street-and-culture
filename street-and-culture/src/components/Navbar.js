@@ -65,8 +65,8 @@ const Navbar = () => {
         <img src={brandLogo} alt="Logo" className="logo" />
         <div className="nav-links">
           <a href="#">SEE BLOGS</a>
-          <a href="#">CONTACT US</a>
           <a href="#">ABOUT US</a>
+          <a href="#">CONTACT US</a>
         </div>
       </div>
 
