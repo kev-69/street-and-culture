@@ -100,7 +100,7 @@ nav .nav-links a::after {
   border-top: 1px solid #d1d5db; /* light gray border */
   align-items: flex-start;
   opacity: 0;
-  transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .mobile-menu.open {
@@ -148,7 +148,7 @@ nav .nav-links a::after {
   }
 
   .navbar-right .icon {
-    margin-right: 2.5rem;
+    padding-right: 0;
   }
 
   .logo {
