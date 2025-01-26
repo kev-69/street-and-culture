@@ -73,7 +73,7 @@ const Home = () => {
     { name: 'Nike', logo: nikeLogo },
     { name: 'Adidas', logo: adidasLogo },
     { name: 'Puma', logo: pumaLogo },
-    { name: 'New Balance', logo: ftyLogo },
+    { name: 'Free The Youth', logo: ftyLogo },
     { name: 'Harriton', logo: harritonLogo },
     { name: 'The North Face', logo: northfaceLogo },
     { name: 'Spyder', logo: spyderLogo },
