@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 
 .navbar {
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: space-between;
   padding: 1rem 1.5rem;
   background-color: #f8f8f8; /* light gray */
-  font-family: "Italiana", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-weight: 600;
   position: fixed;
   z-index: 1000;
@@ -63,8 +63,13 @@ nav .nav-links a::after {
   /* position: absolute; */
 }
 
+.nav-links a:hover {
+  color: #000;
+  font-weight: 900;
+}
+
 .nav-links a:hover::after {
-  color: #1f2937;
+  color: black;
   width: 100%;
   left: 0;
   right: auto;
@@ -141,6 +146,74 @@ nav .nav-links a::after {
   width: 100%;
 }
 
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #4b5563;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Animation for dropdown */
+.dropdown-content {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-content a::after {
+  background: #e6ae60;
+  content: '';
+  display: block;
+  transition: width 0.3s ease;
+  height: 2px;
+  margin-top: 2px;
+  right: 0;
+  width: 0;
+  /* position: absolute; */
+}
+
+.dropdown-content a:hover::after {
+  color: black;
+  width: 20%;
+  left: 0;
+  right: auto;
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 480px) {
   .navbar-left {
@@ -167,5 +240,46 @@ nav .nav-links a::after {
 
   .nav-links {
     display: none; /* Hide links for small screens */
+  }
+  .dropdown > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 0;
+  }
+
+  .dropdown > a::after {
+    content: '→';
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown.active > a::after {
+    transform: rotate(90deg);
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    width: 230px;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    text-align: left;
+  }
+
+  .dropdown-content.active {
+    display: block;
+    max-height: 300px;
+    transition: max-height 0.3s ease-in;
+  }
+
+  .mobile-menu {
+    overflow-y: auto;
+    max-height: 100vh;
   }
 }

@@ -5,6 +5,11 @@ import brandLogo from '../assets/images/web-logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
 
   // Handle closing the menu when clicking outside
   const handleOutsideClick = (e) => {
@@ -38,14 +43,54 @@ const Navbar = () => {
       />
       {isMenuOpen && (
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-          {/* Place a search input here with the search icon with placeholder "Search for products" */}
           <div className="mobile-search">
             <input type="text" placeholder="Search for products" />
             <Search className="icon" />
           </div>
-          <a href="#">BRANDS</a>
-          <a href="#">DENIM WEAR</a>
-          <a href="#">STREET WEAR</a>
+          <div className={`dropdown ${activeDropdown === 0 ? 'active' : ''}`}>
+            <a onClick={(e) => {
+              e.preventDefault();
+              toggleDropdown(0);
+            }}>BRANDS</a>
+            <div className={`dropdown-content ${activeDropdown === 0 ? 'active' : ''}`}>
+              <a href="#">Free The Youth</a>
+              <a href="#">97 Urban</a>
+              <a href="#">Puma</a>
+              <a href="#">The North Face</a>
+              <a href="#">Calvin Klein</a>
+              <a href="#">Urban</a>
+            </div>
+          </div>
+          <div className={`dropdown ${activeDropdown === 1 ? 'active' : ''}`}>
+            <a onClick={(e) => {
+              e.preventDefault();
+              toggleDropdown(1);
+            }}>DENIM WEARS</a>
+            <div className={`dropdown-content ${activeDropdown === 1 ? 'active' : ''}`}>
+              <a href="#">Free The Youth</a>
+              <a href="#">97 Urban</a>
+              <a href="#">Puma</a>
+              <a href="#">The North Face</a>
+              <a href="#">Calvin Klein</a>
+              <a href="#">Urban</a>
+            </div>
+          </div>
+          <div className={`dropdown ${activeDropdown === 2 ? 'active' : ''}`}>
+            <a onClick={(e) => {
+              e.preventDefault();
+              toggleDropdown(2);
+            }}>STREET WEARS</a>
+            <div className={`dropdown-content ${activeDropdown === 2 ? 'active' : ''}`}>
+              <a href="#">Free The Youth</a>
+              <a href="#">97 Urban</a>
+              <a href="#">Puma</a>
+              <a href="#">The North Face</a>
+              <a href="#">Calvin Klein</a>
+              <a href="#">Urban</a>
+            </div>
+          </div>
+          <span></span>
+          <span></span>
           <span></span>
           <span></span>
           <span></span>
@@ -58,9 +103,39 @@ const Navbar = () => {
       {/* Center Section: Logo & Links (large screens only) */}
       <div className="navbar-center">
         <div className="nav-links">
-          <a href="#">BRANDS</a>
-          <a href="#">STREET WEARS</a>
-          <a href="#">DENIM WEARS</a>
+          <div className="dropdown">
+            <a href="#">BRANDS</a>
+              <div className="dropdown-content">
+                <a href="#">Free The Youth</a>
+                <a href="#">97 Urban</a>
+                <a href="#">Puma</a>
+                <a href="#">The North Face</a>
+                <a href="#">Calvin Klein</a>
+                <a href="#">Urban</a>
+              </div>
+          </div>
+          <div className="dropdown">
+            <a href="#">STREET WEARS</a>
+              <div className="dropdown-content">
+                <a href="#">Free The Youth</a>
+                <a href="#">97 Urban</a>
+                <a href="#">Puma</a>
+                <a href="#">The North Face</a>
+                <a href="#">Calvin Klein</a>
+                <a href="#">Urban</a>
+              </div>
+          </div>
+          <div className='dropdown'>
+            <a href="#">DENIM WEARS</a>
+              <div className="dropdown-content">
+                <a href="#">Free The Youth</a>
+                <a href="#">97 Urban</a>
+                <a href="#">Puma</a>
+                <a href="#">The North Face</a>
+                <a href="#">Calvin Klein</a>
+                <a href="#">Urban</a>
+              </div>
+          </div>
         </div>
         <a href="/"><img src={brandLogo} alt="Logo" className="logo" /></a>
         <div className="nav-links">
