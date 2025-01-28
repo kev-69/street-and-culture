@@ -1,6 +1,6 @@
 .footer {
   background-color: #f8f8f8;
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 0 2rem;
   color: #333;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1)
 }
@@ -31,11 +31,12 @@
 
 .contact-info {
   margin-bottom: 1.5rem;
+  gap: 0;
 }
 
 .contact-info p {
   font-size: 0.85rem;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
   color: #666;
 }
 
@@ -93,7 +94,7 @@
 @media screen and (max-width: 992px) {
   .footer-container {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 0;
   }
 
   .footer-brand {
@@ -124,17 +125,36 @@
 }
 
 @media screen and (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem; /* Reduce overall footer padding */
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .footer-brand {
     grid-column: span 1;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    width: 100px; /* Slightly smaller logo */
+    margin-bottom: 1rem; /* Reduce margin */
+  }
+
+  .brand-description {
+    margin-bottom: 1rem; /* Reduce margin */
   }
 
   .link-column {
     text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .link-column h3 {
+    margin-bottom: 0.5rem; /* Reduce margin */
   }
 
   .link-column ul li {

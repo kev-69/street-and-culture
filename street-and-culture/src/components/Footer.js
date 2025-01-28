@@ -14,8 +14,7 @@ const Footer = () => {
             Rep a Ghanaian brand today. Explore the wide variety of youth entrepreneur designers and pick and brand that suits the moment today.
           </p>
           <div className="contact-info">
-            <p>📧 Email: beyondthestreet@gmail.com</p>
-            <p>📍 Address: Labadi beach road, Labadi</p>
+            <p>📧 Email: beyondthestreet@gmail.com <br /> <br />📍 Address: Labadi beach road, Labadi</p>
           </div>
           
         </div>
@@ -79,7 +78,7 @@ const Footer = () => {
             <a href="#" aria-label="Chrome"><FontAwesomeIcon icon={faChrome} /></a> <br />
             
           </div>
-          <p className="copyright">Beyond The Street {new Date().getFullYear()}</p>
+          <p className="copyright">Revolver {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>
