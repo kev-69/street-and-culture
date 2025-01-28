@@ -24,6 +24,12 @@
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+  color: #4b5563;
+  transition: 0.3s ease;
+}
+
+.navbar-left .icon:hover {
+  color: #000;
 }
 
 /* Center Section */
@@ -49,6 +55,7 @@
   color: #4b5563;
   font-size: 0.875rem;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 nav .nav-links a::after {
@@ -81,6 +88,12 @@ nav .nav-links a::after {
   height: 1.5rem;
   cursor: pointer;
   margin-right: 3rem;
+  color: #4b5563;
+  transition: 0.3s ease;
+}
+
+.navbar-right .icon:hover {
+  color: #000;
 }
 
 /* Mobile Menu Icon */
@@ -214,6 +227,22 @@ nav .nav-links a::after {
   right: auto;
 }
 
+.mobile-user {
+  margin-top: auto;
+  padding: 1rem 0 2rem 0;
+  border-top: 1px solid #d1d5db;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-user .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #4b5563;
+  cursor: pointer;
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 480px) {
   .navbar-left {
@@ -281,5 +310,9 @@ nav .nav-links a::after {
   .mobile-menu {
     overflow-y: auto;
     max-height: 100vh;
+  }
+
+  .navbar-right .circle-user {
+    display: none; /* Hide CircleUserRound from navbar on mobile */
   }
 }

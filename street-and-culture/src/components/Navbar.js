@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import { Menu, ShoppingCart, Search } from 'lucide-react';
+import { Menu, ShoppingCart, Search, CircleUserRound } from 'lucide-react';
 import brandLogo from '../assets/images/web-logo.png';
 
 const Navbar = () => {
@@ -67,10 +67,10 @@ const Navbar = () => {
             <a onClick={(e) => {
               e.preventDefault();
               toggleDropdown(1);
-            }}>DENIM WEARS</a>
+            }}>STREET WEARS</a>
             <div className={`dropdown-content ${activeDropdown === 1 ? 'active' : ''}`}>
               <a href="#">Free The Youth</a>
-              <a href="#">97 Urban</a>
+              <a href="#">Patched and Painted Jeans</a>
               <a href="#">Puma</a>
               <a href="#">The North Face</a>
               <a href="#">Calvin Klein</a>
@@ -81,9 +81,9 @@ const Navbar = () => {
             <a onClick={(e) => {
               e.preventDefault();
               toggleDropdown(2);
-            }}>STREET WEARS</a>
+            }}>DENIM WEARS</a>
             <div className={`dropdown-content ${activeDropdown === 2 ? 'active' : ''}`}>
-            <a href="#">Free The Youth</a>
+              <a href="#">Free The Youth</a>
               <a href="#">97 Urban</a>
               <a href="#">Puma</a>
               <a href="#">The North Face</a>
@@ -99,6 +99,11 @@ const Navbar = () => {
           <a href="/blogs">SEE BLOGS</a>
           <a href="/about">ABOUT US</a>
           <a href="/contact">CONTACT US</a>
+
+          {/* Account icon */}
+          <div className="mobile-user">
+            <CircleUserRound className="icon" />
+          </div>
         </div>
       )}
 
@@ -106,7 +111,7 @@ const Navbar = () => {
       <div className="navbar-center">
         <div className="nav-links">
           <div className="dropdown">
-            <a href="#">BRANDS</a>
+            <a>BRANDS</a>
               <div className="dropdown-content">
                 <a href="/FreeTheYouth">Free The Youth</a>
                 <a href="/97Urban">97 Urban</a>
@@ -118,10 +123,10 @@ const Navbar = () => {
               </div>
           </div>
           <div className="dropdown">
-            <a href="#">STREET WEARS</a>
+            <a>STREET WEARS</a>
               <div className="dropdown-content">
                 <a href="#">Free The Youth</a>
-                <a href="#">97 Urban</a>
+                <a href="#">Patched and Painted Jeans</a>
                 <a href="#">Puma</a>
                 <a href="#">The North Face</a>
                 <a href="#">Calvin Klein</a>
@@ -129,7 +134,7 @@ const Navbar = () => {
               </div>
           </div>
           <div className='dropdown'>
-            <a href="#">DENIM WEARS</a>
+            <a>DENIM WEARS</a>
               <div className="dropdown-content">
                 <a href="#">Free The Youth</a>
                 <a href="#">97 Urban</a>
@@ -150,6 +155,7 @@ const Navbar = () => {
 
       {/* Right Section: Cart Icon */}
       <div className="navbar-right">
+        <CircleUserRound className="icon circle-user" />
         <ShoppingCart className="icon" />
       </div>
     </nav>
