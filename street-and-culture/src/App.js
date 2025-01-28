@@ -6,6 +6,13 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Blogs from "./pages/Blogs";
 
+// Brands pages import
+import Urban from "./pages/brands/Urban";
+import Fellas from "./pages/brands/Fellas";
+import FTY from "./pages/brands/FTY";
+import Mindset from "./pages/brands/Mindset";
+import KevWCP from "./pages/brands/KevWCP";
+
 function App() {
   return (
     <Router>
@@ -16,6 +23,11 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/97Urban" element={<Urban />} />
+            <Route path="/60Fellas" element={<Fellas />} />
+            <Route path="/FreeTheYouth" element={<FTY />} />
+            <Route path="/Mindset" element={<Mindset />} />
+            <Route path="/KevWCP" element={<KevWCP />} />
             </Routes>
           </Layout>
       </div>
