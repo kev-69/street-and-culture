@@ -100,7 +100,7 @@ const Home = () => {
           />
         ))}
         <h1 className="banner-overlay">CULTURE, BEYOND THE STREET</h1>
-        <p className="banner-description">A platform for street clothing brand owners to sell their products.</p>
+        <p className="banner-description">A platform for street clothing brand owners to advertise and sell their products.</p>
       </div>
       {/* Banner Section End */}
       
@@ -118,6 +118,12 @@ const Home = () => {
         </div>
       </section>
       {/* Featured Brands Section End */}
+
+      {/* Best Selling Products */}
+      {/* Best Selling Products End */}
+
+      {/* Reviews */}
+      {/* Reviews End */}
     </div>
   );
 };
