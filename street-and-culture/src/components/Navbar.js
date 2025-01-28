@@ -53,12 +53,14 @@ const Navbar = () => {
               toggleDropdown(0);
             }}>BRANDS</a>
             <div className={`dropdown-content ${activeDropdown === 0 ? 'active' : ''}`}>
-              <a href="#">Free The Youth</a>
-              <a href="#">97 Urban</a>
-              <a href="#">Puma</a>
-              <a href="#">The North Face</a>
+              <a href="/FreeTheYouth">Free The Youth</a>
+              <a href="/97Urban">97 Urban</a>
+              <a href="/Mindset">MINDSET</a>
+              <a href="/60Fellas">60.Fellas</a>
+              <a href="/KevWCP">Kevlar Cool Pants</a>
               <a href="#">Calvin Klein</a>
               <a href="#">Urban</a>
+              
             </div>
           </div>
           <div className={`dropdown ${activeDropdown === 1 ? 'active' : ''}`}>
@@ -81,7 +83,7 @@ const Navbar = () => {
               toggleDropdown(2);
             }}>STREET WEARS</a>
             <div className={`dropdown-content ${activeDropdown === 2 ? 'active' : ''}`}>
-              <a href="#">Free The Youth</a>
+            <a href="#">Free The Youth</a>
               <a href="#">97 Urban</a>
               <a href="#">Puma</a>
               <a href="#">The North Face</a>
@@ -106,10 +108,11 @@ const Navbar = () => {
           <div className="dropdown">
             <a href="#">BRANDS</a>
               <div className="dropdown-content">
-                <a href="#">Free The Youth</a>
-                <a href="#">97 Urban</a>
-                <a href="#">Puma</a>
-                <a href="#">The North Face</a>
+                <a href="/FreeTheYouth">Free The Youth</a>
+                <a href="/97Urban">97 Urban</a>
+                <a href="/Mindset">MINDSET</a>
+                <a href="/60Fellas">60.Fellas</a>
+                <a href="/KevWCP">Kevlar Cool Pants</a>
                 <a href="#">Calvin Klein</a>
                 <a href="#">Urban</a>
               </div>
