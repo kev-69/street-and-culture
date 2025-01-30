@@ -102,7 +102,7 @@ const Navbar = () => {
 
           {/* Account icon */}
           <div className="mobile-user">
-            <CircleUserRound className="icon" />
+            <a href="/login"><CircleUserRound className="icon" /></a>
           </div>
         </div>
       )}
@@ -155,7 +155,7 @@ const Navbar = () => {
 
       {/* Right Section: Cart Icon */}
       <div className="navbar-right">
-        <CircleUserRound className="icon circle-user" />
+        <a href="/login"><CircleUserRound className="icon circle-user" /></a>
         <ShoppingCart className="icon" />
       </div>
     </nav>
