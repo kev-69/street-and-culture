@@ -139,6 +139,7 @@
 @media (max-width: 480px) {
     .login-container {
         padding: 1rem;
+        min-height: 80vh;
     }
 
     .input-group input {
