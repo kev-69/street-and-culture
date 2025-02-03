@@ -122,6 +122,9 @@ const Home = () => {
       {/* Best Selling Products */}
       {/* Best Selling Products End */}
 
+      {/* Recommended Fit Section */}
+      {/* Recommended Fit Section End */}
+
       {/* Reviews */}
       {/* Reviews End */}
     </div>
