@@ -1,12 +1,13 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import './AboutUs.css';
+import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
   return (
     <div>
-      <Navbar />
+    <Helmet>
+      <title>About Us</title>
+    </Helmet>
       <main className="about-container">
         <div className="about-header">
           <h1>About Street & Culture</h1>
@@ -55,7 +56,6 @@ const AboutUs = () => {
           </section>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

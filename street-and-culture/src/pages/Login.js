@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, Lock } from 'lucide-react'
+import { Helmet } from 'react-helmet'
 
 import './Login.css'
 
@@ -25,6 +26,9 @@ const Login = () => {
 
   return (
     <div className='login-container'>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className="login-box">
         <h1>Login</h1>
         <p className="login-subtitle">Welcome back! Please login to your account</p>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactUs.css';
+import { Helmet } from 'react-helmet';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -33,6 +34,9 @@ const ContactUs = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Contact Us</title>
+      </Helmet>
       <main className="contact-container">
         <div className="contact-header">
           <h1>Contact Us</h1>

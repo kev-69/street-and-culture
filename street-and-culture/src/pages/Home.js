@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+import { Helmet } from 'react-helmet';
 
 // home page background images
 import homeBg1 from '../assets/images/home-bg1.jpg';
@@ -90,6 +91,9 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>Home - Revolver</title>
+      </Helmet>
       {/* Banner Section */}
       <div className="banner-container">
         {images.map((img, index) => (

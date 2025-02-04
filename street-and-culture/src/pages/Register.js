@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { UserRound, Mail, Lock, LockKeyhole } from 'lucide-react'
 
 import './Register.css'
+import { Helmet } from 'react-helmet'
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -41,6 +42,9 @@ const Register = () => {
 
   return (
     <div className='register-container'>
+      <Helmet>
+        <title>Sign Up</title>
+      </Helmet>
       <div className="register-box">
         <h1>Create An Account</h1>
         <p className="register-subtitle">Welcome. Register an account</p>
