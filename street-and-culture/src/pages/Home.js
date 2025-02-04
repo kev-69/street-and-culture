@@ -5,6 +5,7 @@ import './Home.css';
 import homeBg1 from '../assets/images/home-bg1.jpg';
 import homeBg2 from '../assets/images/home-bg2.jpg';
 import homeBg3 from '../assets/images/home-bg3.jpg';
+import recommendedImage from '../assets/images/recommended-image.jpg'
 
 // import slick carousel
 import Slider from 'react-slick';
@@ -123,6 +124,17 @@ const Home = () => {
       {/* Best Selling Products End */}
 
       {/* Recommended Fit Section */}
+      <div className="recommended-main-container">
+        <div className="fit-image">
+          <img src={recommendedImage} alt="" />
+        </div>
+        <div className="image-text">
+          <h1>Shine the street</h1>
+          <h2>Discover Your Style</h2>
+          <p>Looking for a functional yet trendy fit? The SWTS Archer Bag from streetwear is your go-to option. With its minimalist crescent design and spacious interior, it’s the perfect cross bag for carrying all your essentials in streetwear style.</p>
+          <button>Shop Now</button>
+        </div>
+      </div>
       {/* Recommended Fit Section End */}
 
       {/* Reviews */}
