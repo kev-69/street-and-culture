@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import { Helmet } from 'react-helmet';
 
 // home page background images
 import homeBg1 from '../assets/images/home-bg1.jpg';
@@ -28,6 +27,37 @@ import flexfitLogo from '../assets/brands/sadfghn.png'
 import adidasLogo from '../assets/brands/sadf.png'
 import alstyleLogo from '../assets/brands/Untitled-1-150x150.png';
 import ogioLogo from '../assets/brands/sdf.png';
+
+// Date for Best Selling section
+import { bestSellingData } from '../helpers/data';
+
+const bestSellingSettings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
+};
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -91,9 +121,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Helmet>
-        <title>Home - Revolver</title>
-      </Helmet>
       {/* Banner Section */}
       <div className="banner-container">
         {images.map((img, index) => (
@@ -125,10 +152,30 @@ const Home = () => {
       {/* Featured Brands Section End */}
 
       {/* Best Selling Products */}
+      <section className='best-selling'>
+        <div className="best-selling-container">
+          <h2>Best Selling</h2>
+          <Slider {...bestSellingSettings}>
+            {bestSellingData.map((product) => (
+              <div key={product.id} className="product-card">
+                <div className="product-images">
+                  <img src={product.images.one} alt={product.title} className="front" />
+                  <img src={product.images.two} alt={product.title} className="back" />
+                </div>
+                <div className="product-info">
+                  <span>{product.title}</span> <span> - </span>
+                  <span className="brand">{product.brandName}</span>
+                  <p className="price">${product.price.toFixed(2)}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
       {/* Best Selling Products End */}
 
       {/* Recommended Fit Section */}
-      <div className="recommended-main-container">
+      <section className="recommended-main-container">
         <div className="fit-image">
           <img src={recommendedImage} alt="" />
         </div>
@@ -138,7 +185,7 @@ const Home = () => {
           <p>Looking for a functional yet trendy fit? The SWTS Archer Bag from streetwear is your go-to option. With its minimalist crescent design and spacious interior, it’s the perfect cross bag for carrying all your essentials in streetwear style.</p>
           <button>Shop Now</button>
         </div>
-      </div>
+      </section>
       {/* Recommended Fit Section End */}
 
       {/* Reviews */}
