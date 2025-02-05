@@ -127,7 +127,7 @@
 /* Featured Brands Section */
 .featured-brands {
   padding: 0.5rem 2rem;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 }
 
 .featured-brands h2 {
@@ -149,7 +149,7 @@
 }
 
 .brands-carousel {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -251,14 +251,18 @@
   }
 }
 
+.main-content {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 /* Best Selling Products Section */
 .best-selling {
   padding: 0.5rem 2rem;
 }
 
 .best-selling-container {
-  max-width: 1300px;
-  margin: 0 auto;
+  
 }
 
 .best-selling h2 {
@@ -284,7 +288,6 @@
   width: 40px;
   height: 40px;
   z-index: 1;
-  /* padding: 0 15px; */
 }
 
 .best-selling .slick-prev {
@@ -376,7 +379,7 @@
   margin: 4rem auto;
   padding: 0 2rem;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 }
 
 .fit-image {

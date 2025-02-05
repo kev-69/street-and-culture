@@ -152,6 +152,7 @@ const Home = () => {
       {/* Featured Brands Section End */}
 
       {/* Best Selling Products */}
+      <main className="main-content">
       <section className='best-selling'>
         <div className="best-selling-container">
           <h2>Best Selling</h2>
@@ -187,7 +188,7 @@ const Home = () => {
         </div>
       </section>
       {/* Recommended Fit Section End */}
-
+      </main>
       {/* Reviews */}
       {/* Reviews End */}
     </div>
