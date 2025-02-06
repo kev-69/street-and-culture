@@ -185,6 +185,7 @@ const Home = () => {
         </Slider>
       </div>
     </section>
+    <hr />
       {/* Best Selling Products End */}
 
       {/* Recommended Fit Section */}
