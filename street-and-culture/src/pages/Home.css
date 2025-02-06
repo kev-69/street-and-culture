@@ -87,43 +87,6 @@
   z-index: 1;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1200px) {
-  .banner-overlay {
-    font-size: 3.5rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .banner-overlay {
-    font-size: 2.5rem;
-    top: 40%;
-  }
-
-  .banner-description {
-    font-size: 1rem;
-    top: 55%;
-    padding: 0 20px;
-  }
-}
-
-/* Portrait phones */
-@media screen and (max-height: 480px) {
-  .banner-container {
-    height: 70vh;
-  }
-
-  .banner-overlay {
-    font-size: 1.8rem;
-    top: 45%;
-  }
-
-  .banner-description {
-    font-size: 0.8rem;
-    top: 65%;
-  }
-}
-
 /* Featured Brands Section */
 .featured-brands {
   padding: 0.5rem 2rem;
@@ -200,57 +163,6 @@
   color: #333;
 }
 
-@media screen and (max-width: 768px) {
-  .banner-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .banner-content p {
-    font-size: 1rem;
-  }
-
-  .featured-brands {
-    padding: 3rem 1rem;
-  }
-
-  .featured-brands h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .brands-carousel {
-    padding: 0 1rem;
-  }
-
-  .brand-item {
-    height: 80px;
-  }
-
-  .brand-item img {
-    max-width: 100px;
-    max-height: 70px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .banner-content h1 {
-    font-size: 2rem;
-  }
-
-  .featured-brands h2 {
-    font-size: 1.8rem;
-  }
-
-  .brand-item {
-    height: 70px;
-  }
-
-  .brand-item img {
-    max-width: 70px;
-    max-height: 70px;
-  }
-}
-
 .main-content {
   max-width: 1300px;
   margin: 0 auto;
@@ -258,19 +170,19 @@
 
 /* Best Selling Products Section */
 .best-selling {
-  padding: 0.5rem 2rem;
+  padding: 40px 20px;
+  /* background: #e5e5e5; */
 }
 
-.best-selling h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-family: 'Julius Sans One', serif;
+.best-selling-container h2 {
   font-size: 2.5rem;
-  letter-spacing: 2px;
-  position: relative;
+  color: #000;
+  margin-bottom: 80px;
+  font-family: "Julius Sans One", sans-serif;
+  text-align: center;
 }
 
-.best-selling h2::after {
+.best-selling-container h2::after {
   content: '';
   display: block;
   width: 100px;
@@ -279,51 +191,38 @@
   margin: 0.5rem auto 0;
 }
 
-.best-selling .slick-prev,
-.best-selling .slick-next {
-  width: 40px;
-  height: 40px;
-  z-index: 1;
-}
-
-.best-selling .slick-prev {
-  left: 0;
-}
-
-.best-selling .slick-next {
-  right: 0;
-}
-
-.best-selling .slick-prev:before,
-.best-selling .slick-next:before {
-  font-size: 40px;
-  color: #000;
+.products-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .product-card {
-  position: relative;
+  background: #fff;
+  border: 2px solid #E6AE60;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  width: 282px;
+  text-align: left;
   transition: transform 0.3s ease;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
 }
 
 .product-images {
   position: relative;
-  aspect-ratio: 3/4;
+  width: 100%;
+  height: 260px;
   overflow: hidden;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border: 2px solid #E6AE60;
 }
 
 .product-images img {
-  width: 100%;
+  width: 280px;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
+  border: 2px solid #E6AE60;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   transition: opacity 0.3s ease;
 }
 
@@ -334,37 +233,110 @@
   opacity: 0;
 }
 
-.product-card:hover .back {
+.product-card:hover .product-images .back {
   opacity: 1;
 }
 
+.product-card:hover .product-images .front {
+  opacity: 0;
+}
+
 .product-info {
-  padding: 1rem 1rem 0 1rem;
+  padding: 10px;
 }
 
-.product-info .brand {
-  color: #666;
-  font-size: 0.9rem;
-  font-family: 'Julius Sans One', sans-serif;
+.product-brand {
+  font-size: 1rem;
+  color: #777;
+  font-weight: 500;
+  font-family: "Julius Sans One", sans-serif;
 }
 
-.product-info span {
-  margin: 0.5rem 0;
+.product-action {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.product-info .price {
+.view-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #E6AE60;
   font-weight: bold;
-  font-family: 'Julius Sans One', sans-serif
+  text-decoration: none;
+  gap: 5px;
 }
 
-@media screen and (max-width: 1280px) {
-  .best-selling .slick-prev {
-    left: 10px;
-  }
-  .best-selling .slick-next {
-    right: 10px;
-  }
+.product-action span {
+  font-weight: 500;
 }
+
+.view-product {
+  color: #E6AE60;
+  font-family: 'Julius Sans One', sans-serif;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.eye-icon {
+  stroke-width: 1.5;
+  width: 18px;
+  height: 18px;
+}
+
+/* Custom Arrows */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background: #E6AE60;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.custom-arrow:hover {
+  opacity: 1;
+}
+
+.custom-arrow::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 5px;
+}
+
+.next {
+  right: -20px;
+}
+
+.next::before {
+  transform: rotate(-45deg);
+}
+
+.prev {
+  left: -20px;
+}
+
+.prev::before {
+  transform: rotate(135deg);
+}
+
 
 /* Recommended Fits Section Styles */
 .recommended-main-container {
@@ -476,7 +448,15 @@
   }
 }
 
+
+
 /* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .banner-overlay {
+    font-size: 3.5rem;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .recommended-main-container {
     grid-template-columns: 1fr;
@@ -498,7 +478,82 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+  .banner-overlay {
+    font-size: 2.5rem;
+    top: 40%;
+  }
+
+  .banner-description {
+    font-size: 1rem;
+    top: 55%;
+    padding: 0 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+  }
+
+  .featured-brands {
+    padding: 3rem 1rem;
+  }
+
+  .featured-brands h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .brands-carousel {
+    padding: 0 1rem;
+  }
+
+  .brand-item {
+    height: 80px;
+  }
+
+  .brand-item img {
+    max-width: 100px;
+    max-height: 70px;
+  }
+}
+
+/* Portrait phones */
+@media screen and (max-height: 480px) {
+  .banner-container {
+    height: 70vh;
+  }
+
+  .banner-overlay {
+    font-size: 1.8rem;
+    top: 45%;
+  }
+
+  .banner-description {
+    font-size: 0.8rem;
+    top: 65%;
+  }
+
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .featured-brands h2 {
+    font-size: 1.8rem;
+  }
+
+  .brand-item {
+    height: 70px;
+  }
+
+  .brand-item img {
+    max-width: 70px;
+    max-height: 70px;
+  }
+
   .recommended-main-container {
     padding: 0 1rem;
   }
